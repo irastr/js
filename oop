@@ -1,0 +1,76 @@
+// ФУНКЦИИИ - КОНСТРУКТОРЫ
+
+//юзаются для сздания множества однотипных обьектов. Конструктор - обычная функция, которая создает this,
+// присваивает ему свойства и возвращает новый обьект
+function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+}
+
+let user = new User("Вася");
+
+
+console.log(user.name); // Вася
+console.log(user.isAdmin); // false
+
+// ПРОТОТИПНОЕ НАСЛЕДОВАНИЕ
+
+// [[Prototype]] - скрытое свойство, которое ссылается или на null или на другой обьект
+let animal = {
+    eats: true
+};
+let rabbit = {
+    jumps: true
+};
+
+rabbit.__proto__ = animal;
+// теперь оба свойства есть в rabbit:
+console.log(rabbit.eats );
+console.log(rabbit.jumps);
+// __proto__ !== [[Prototype]], а __proto__ - это геттер и сеттер для прототипа.Так же можно использовать:
+Object.getPrototypeOf(rabbit);
+Object.setPrototypeOf(rabbit);
+
+//PROTOTYPE
+
+//конструктор  !== прототип :) Конструктор нужен чисто для создания множества однотипных обьектов, а с помощью прототипа реализуется наследование.
+// свойства , которые должны быть общими для нескольких обьектов не будут создаваться для каждого екземпляра, а будут лежать в прототипа и все инстансы
+// будут ссылаться на него и получать их.
+
+let animal = {
+    eats: true
+};
+
+function Rabbit(name) {
+    this.name = name;
+}
+console.log(Rabbit.prototype);
+// По умолчанию "prototype" – объект с единственным свойством constructor, которое ссылается на функцию-конструктор.
+// Rabbit.prototype = { constructor: Rabbit };
+console.log(Rabbit.prototype.constructor === Rabbit);
+console.log(Rabbit.__proto__);
+
+Rabbit.prototype = animal;
+// this overrides the constructor of Rabbit to Object and adds animal as prototype for Rabbit
+// if delete Rabbit.prototype = animal; => rabbit.__proto__ === Rabbit && rabbit.constructor === Rabbit => true
+console.log(Rabbit.prototype === animal);
+
+let rabbit = new Rabbit("White Rabbit");
+
+console.log(rabbit.__proto__);
+console.log(Object.getPrototypeOf(rabbit));
+
+// __proto__ и constructor - не одно и то же !!!
+
+console.log(rabbit instanceof Rabbit);
+console.log(rabbit.constructor === Rabbit);
+//overwritten to Object by Rabbit.prototype = animal;
+
+//перезапись прототипа
+Rabbit.prototype = Object;
+let rabbit2 = new Rabbit("White Rabbit");
+console.log(rabbit2.__proto__);
+
+// отличие __proto__ от prototype. __proto__ - геттер и сеттер для прототипа обьекта.
+// А prototype - свойство конструктора, которое записывает протопип  обьекта.
+// Раньше прямого доступа к прототипу через __proto__ не было и юзалось только свойство prototype
