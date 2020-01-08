@@ -1,3 +1,80 @@
+//Наследование объектов
+
+//[[ Prototype]] скрытое свойство которое указывает на null или на другой ОБЬЕКТ
+//__proto__ геттер и сеттер для прототипа у обьектов (еще есть Object.get/setPrototypeOf и Object.create(proto))
+//prototype - свойство через которое можно прочитать/установить у конструкторов
+
+const object1 = {
+    name: 'a'
+};
+
+const object2 = {
+    age: 2
+};
+
+object2.__proto__ = object1;
+console.log(object1.name); //'a
+
+//Конструкторы
+function C(name) {
+    this.name = name
+}
+
+C.prototype.sayName = function() {
+    return 'Hi' + this.name
+};
+const c = new C('c');
+console.log(c instanceof C);
+console.log(c.name); // c
+console.log(c.sayName()); // Hic
+
+//Наследование конструкторов
+function B(age) {
+    this.age = age
+}
+
+B.prototype.__proto__ = C.prototype;
+const b = new B(42);
+console.log(b.sayName()); // Hiundefined
+
+//Classes
+class Color {
+    constructor(name) {
+        this.name = name
+    }
+    sayHi () {
+        return this.name
+    }
+}
+
+const blue = new Color('blue');
+console.log(blue.name); //blue
+console.log(blue.sayHi()); //blue
+//под капотом класс все что в методе конструктор записывает в функцию-конструктор, а все что вне его - в прототип
+
+//Наследование у классов
+
+class Blue extends Color {
+    //у класса без конструктора копируется конструктор родителя. если мы хотим добавить ему свои свойства - super
+    constructor(name, age) {
+        super(name);
+        this.age = age
+        //новые свойства указываем после супер, иначе перетрутся
+    }
+    sayHi () {
+        return 'bruh'
+        //метод родителя переопределится - полиморфизм
+    }
+}
+
+//extends под капотом делает Blue.prototype.__proto__ = Color.prototype и копирует контсруктор родителя
+
+//в классе есть приватные и публичные методы(инкапсуляция), реализуются через _метод + геттер/сеттер или через новое #свойство
+//геттеры и сеттеры есть еще в обьектах, нужны что бы например сетить свойство, только если оно соответсвует опр условиям.
+
+
+//DETAILS
+
 // ФУНКЦИИ - КОНСТРУКТОРЫ
 
 //используются для сздания множества однотипных обьектов. Конструктор - обычная функция, которая создает this,
@@ -67,7 +144,7 @@ const rabbit3000 = Object.create(animal2);
 
 //.prototype - свойство конструктора
 //свойство F.prototype (не путать с [[Prototype]]) устанавливает[[Prototype]] для новых объектов при вызове new F().
-// Конструктор нужен чисто для создания множества однотипных обьектов, а с помощью прототипа реализуется наследование.
+//конструктор  !== .prototype :) Конструктор нужен чисто для создания множества однотипных обьектов, а с помощью прототипа реализуется наследование.
 // свойства , которые должны быть общими для нескольких обьектов не будут создаваться для каждого екземпляра, а будут лежать в прототипа и все инстансы
 // будут ссылаться на него и получать их.
 // .prototype нужен для задания прототипов для обьктов созданных с помощью функций-конструкторов
@@ -108,13 +185,17 @@ console.log(rabbit2.__proto__);
 console.log(rabbit1.__proto__);
 
 // Присвоение нового значения свойству Rabbit.prototype влияет на [[Prototype]] вновь создаваемых объектов, но не на прототип уже существующих.
-function Rabbit() {}
-Rabbit.prototype = {
+function Rabbit000() {}
+Rabbit000.prototype = {
     eats: true
 };
 let rabbit3 = new Rabbit();
-Rabbit.prototype = {};
+Rabbit000.prototype = {};
 console.log(rabbit3.eats); // true
+
+//Наследование конструкторов:
+function Lol2() {}
+Rabbit000.prototype.__proto__ = Lol2.prototype;
 
 //CLASSES
 
@@ -533,16 +614,12 @@ new User("Вася").sayHi(); // Привет, Вася!*/
 //Это не наследование, а просто копирование методов. Таким образом, класс User может наследовать от другого класса, но при этом также включать в себя примеси, «подмешивающие» другие методы
 
 
-
-
-
 const f = () => {};
 const a = [];
 const u = undefined;
 
 console.log({}.toString.call(a));
 //instead of instance of
-
 
 
 
@@ -562,6 +639,11 @@ sayHi(); // Привет, Вася!
 
 
 // const arr = [1, 1, 1, 2, 3, 6, 7, 6, 8, 7, 7, 2, 10];
+
+
+
+
+
 
 
 
