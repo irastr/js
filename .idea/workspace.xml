@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/oop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="122" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="122" />
+            <state relative-caret-position="11886">
+              <caret line="566" selection-start-line="566" selection-end-line="566" />
             </state>
           </provider>
         </entry>
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="530" lean-forward="true" selection-start-line="530" selection-end-line="530" />
+            <state relative-caret-position="391">
+              <caret line="562" lean-forward="true" selection-end-line="566" />
             </state>
           </provider>
         </entry>
@@ -73,9 +73,9 @@
       <list>
         <option value="$PROJECT_DIR$/oop" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.es6" />
-        <option value="$PROJECT_DIR$/oop.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.es6" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.es6" />
+        <option value="$PROJECT_DIR$/oop.js" />
       </list>
     </option>
   </component>
@@ -154,24 +154,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576500664098</updated>
-      <workItem from="1576500665716" duration="33268000" />
+      <workItem from="1576500665716" duration="33564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33268000" />
+    <option name="totallyTimeSpent" value="33564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21987315" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Quokka" visible="true" weight="0.15970516" />
+      <window_info anchor="bottom" id="Quokka" weight="0.34152335" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.16584766" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.25798526" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -189,13 +188,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/oop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="122" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -212,8 +204,15 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="530" lean-forward="true" selection-start-line="530" selection-end-line="530" />
+        <state relative-caret-position="391">
+          <caret line="562" lean-forward="true" selection-end-line="566" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11886">
+          <caret line="566" selection-start-line="566" selection-end-line="566" />
         </state>
       </provider>
     </entry>
